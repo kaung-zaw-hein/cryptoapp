@@ -10,7 +10,7 @@ function Navbar() {
     <div className="nav-container">
        <div className="logo-container">
          <Avatar src={icon} size='large'></Avatar>
-         <Typography.Title level={2} className="logo"><Link to="/">Cryptoverse</Link></Typography.Title>
+         <Typography.Title level={2} className="logo"><Link to="/">Brnyr Crypto</Link></Typography.Title>
         <Button className="menu-control-container" ><MenuOutlined /></Button>
       </div>
       <Menu theme='dark'>
