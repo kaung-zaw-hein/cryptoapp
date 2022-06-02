@@ -5,13 +5,14 @@ import { Link } from 'react-router-dom';
 
 import { useGetCryptosQuery } from '../services/cryptoApi';
 import Cryptocurrencies from './Cryptocurrencies';
+import { Loader } from '../components';
 import News from './News';
 const { Title } = Typography;
 
 const Homepage = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
   let globalStats
-  if (isFetching){ return "dfskj";}
+  if (isFetching){ return <Loader />;}
   else{  globalStats = data.data.stats; }
   return (
     <>

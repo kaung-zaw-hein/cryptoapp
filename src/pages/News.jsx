@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Select, Typography, Row, Col, Avatar, Card } from 'antd';
 import moment from 'moment';
 
 import { useGetCryptosQuery } from '../services/cryptoApi';
 import { useGetCryptoNewsQuery } from '../services/cryptoNewsApi';
+import { Loader } from '../components'
 
 const demoImage = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News';
 
@@ -17,10 +18,7 @@ function News( {simplified}) {
   const count = simplified ? 6 : 12 ;
   const { data: cryptoNews } = useGetCryptoNewsQuery(`${newsCategory}&safeSearch=Off&textFormat=Raw&freshness=Day&count=${count}`);
 
-  console.log(cryptoNews);
-
-  if (!cryptoNews) return "dfsaf";
-
+  if (!cryptoNews) return <Loader />;
   return (
     <Row gutter={[24, 24]}>
     {!simplified && (
@@ -47,13 +45,13 @@ function News( {simplified}) {
           <a href={news.url} target="_blank" rel="noreferrer">
             <div className="news-image-container">
               <Title className="news-title" level={4}>{news.name}</Title>
-              {/* {news.image.thumbnail.contentUrl && <img src={news.image.thumbnail.contentUrl} alt="brnyr" />} */}
-              { <img src={demoImage} alt="brnyr" />}
+              <img src={demoImage} alt="brnyr" />
+              {/* {showimage && !news["image"]["thumbnail"]["contentUrl"] ? <img src={news["image"]["thumbnail"]["contentUrl"]} alt="brnyr" /> : <img src={demoImage} alt="brnyr" />} */}
             </div>
             <p>{news.description.length > 100 ? `${news.description.substring(0, 100)}...` : news.description}</p>
             <div className="provider-container">
               <div>
-              {/* {news.provider[0].image.thumbnail.contentUrl  && <Avatar src={news.provider[0].image.thumbnail.contentUrl } alt="media" />} */}
+              {/* {(showimage && news["provider"][0]["image"]["thumbnail"]["contentUrl"])? <Avatar src={news["provider"][0]["image"]["thumbnail"]["contentUrl"]} alt="brnyr" /> : <Avatar src={demoImage} alt="brnyr" />} */}
               { <Avatar src={demoImage} alt="" />}
                 <Text className="provider-name">{news.provider[0].name}</Text>
               </div>

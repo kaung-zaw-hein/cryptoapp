@@ -54,9 +54,11 @@ a:hover{
 }
 .logo{
   margin:0 0 0 15px;
+  color: white !important;
+  display:inline;
 }
 .logo a{
- color: white;
+ color: white !important;
 }
 .menu-control-container{
   display: none !important;
@@ -356,13 +358,8 @@ width: 70%;
   margin: 20px auto 30px auto;
   width: 450px;
 }
-.crypto-card-container{
-  min-height: 65vh !important;
-}
-.crypto-card{
-  min-width: 250px;
-}
-.crypto-card .crypto-image{
+
+.crypto-image{
   width:35px;
 }
 .select-timeperiod{
@@ -376,4 +373,25 @@ width: 70%;
   flex-direction: column;
   padding: 20px;
   align-items: center;
+}
+.section{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  height:90vh;
+  position:relative;
+}
+.error_container{
+  color:#fff;
+}
+.error_container h1{
+  font-size:4em;
+}
+.error_container a{
+  position:absolute;
+  top: 20px;
+  right: 40px;
+  color:#212527;
+  margin-top:40px;
+  padding:20px;
 }

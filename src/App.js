@@ -3,8 +3,8 @@ import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Layout} from 'antd';
 
-import { Navbar, Footer } from './components';
-import { Exchanges, Homepage, News, Cryptocurrencies, CryptoDetails} from './pages';
+import { Navbar, Footer, Error } from './components';
+import {  Homepage, News, Cryptocurrencies, CryptoDetails} from './pages';
 
 const App = () => (
   <div className="app">
@@ -19,8 +19,7 @@ const App = () => (
             <Route path="/cryptocurrencies"  element={<Cryptocurrencies />} />
             <Route path="/crypto/:coinId"  element={<CryptoDetails />} />
             <Route path="/news"  element={<News />} />
-            <Route path="/exchanges"  element={<Exchanges />} />
-            
+            <Route path="*"  element={  <Error />}/>
           </Routes>
         </div>
       </Layout>
