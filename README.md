@@ -1,3 +1,8 @@
+# React Crypto App
+
+![image](https://user-images.githubusercontent.com/62888962/172120785-5faa7a46-86d3-4f31-87f9-72658be90973.png)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
