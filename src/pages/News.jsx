@@ -45,14 +45,14 @@ function News( {simplified}) {
           <a href={news.url} target="_blank" rel="noreferrer">
             <div className="news-image-container">
               <Title className="news-title" level={4}>{news.name}</Title>
-              <img src={demoImage} alt="brnyr" />
-              {/* {showimage && !news["image"]["thumbnail"]["contentUrl"] ? <img src={news["image"]["thumbnail"]["contentUrl"]} alt="brnyr" /> : <img src={demoImage} alt="brnyr" />} */}
+              {/* <img src={demoImage} alt="brnyr" /> */}
+              {news["image"]["thumbnail"]["contentUrl"] ? <img src={news["image"]["thumbnail"]["contentUrl"]} alt="brnyr" /> : <img src={demoImage} alt="brnyr" />}
             </div>
             <p>{news.description.length > 100 ? `${news.description.substring(0, 100)}...` : news.description}</p>
             <div className="provider-container">
               <div>
-              {/* {(showimage && news["provider"][0]["image"]["thumbnail"]["contentUrl"])? <Avatar src={news["provider"][0]["image"]["thumbnail"]["contentUrl"]} alt="brnyr" /> : <Avatar src={demoImage} alt="brnyr" />} */}
-              { <Avatar src={demoImage} alt="" />}
+              {( news["provider"][0]["image"]["thumbnail"]["contentUrl"])? <Avatar src={news["provider"][0]["image"]["thumbnail"]["contentUrl"]} alt="brnyr" /> : <Avatar src={demoImage} alt="brnyr" />}
+          
                 <Text className="provider-name">{news.provider[0].name}</Text>
               </div>
               <Text>{moment(news.datePublished).startOf('ss').fromNow()}</Text>
